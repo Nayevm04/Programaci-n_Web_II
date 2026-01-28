@@ -1,5 +1,5 @@
 const express = require('express');
-const Model = require('../models/model'); // Asegúrate que la ruta es correcta
+const Model = require('../models/model'); 
 const router = express.Router();
 
 // POST - Crear un nuevo documento
