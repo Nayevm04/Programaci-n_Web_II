@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Cursos</title>
+</head>
+<body>
+
+<h2>Lista de Cursos</h2>
+<ul id="lista"></ul>
+
+<script>
+const URL = "http://localhost:3001/course";
+
+fetch(URL)
+  .then(r => r.json())
+  .then(data => {
+    const ul = document.getElementById("lista");
+    data.forEach(c => {
+      const li = document.createElement("li");
+      li.textContent = c.name + " - " + c.credits + " créditos";
+      ul.appendChild(li);
+    });
+  })
+  .catch(console.error);
+</script>
+
+</body>
+</html>

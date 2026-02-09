@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Crear Curso</title>
+</head>
+<body>
+
+<h2>Crear Curso</h2>
+
+<input id="name" placeholder="Nombre">
+<input id="credits" type="number" placeholder="Créditos">
+<button onclick="crear()">Guardar</button>
+
+<script>
+const URL = "http://localhost:3001/course";
+
+function crear() {
+  fetch(URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name: document.getElementById("name").value,
+      credits: document.getElementById("credits").value
+    })
+  })
+  .then(r => r.json())
+  .then(() => {
+    alert("Curso creado correctamente");
+    window.location.href = "index.html";
+  })
+  .catch(console.error);
+}
+</script>
+
+</body>
+</html>
