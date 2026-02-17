@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Curso</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<h2>Editar Curso</h2>
+
+<input type="hidden" id="cursoId">
+
+<input type="text" id="nombre">
+<br><br>
+
+<input type="text" id="codigo">
+<br><br>
+
+<input type="text" id="descripcion">
+<br><br>
+
+<select id="profesorSelect"></select>
+<br><br>
+
+<button onclick="actualizarCurso()">Actualizar</button>
+
+<script src="../js/course.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", async () => {
+        await cargarProfesores();
+        await cargarCursoEditar();
+    });
+</script>
+
+
+</body>
+</html>

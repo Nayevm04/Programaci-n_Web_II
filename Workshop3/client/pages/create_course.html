@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Curso</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<h2>Crear Curso</h2>
+
+<input type="text" id="nombre" placeholder="Nombre">
+<br><br>
+
+<input type="text" id="codigo" placeholder="Código">
+<br><br>
+
+<input type="text" id="descripcion" placeholder="Descripción">
+<br><br>
+
+<select id="profesorSelect"></select>
+<br><br>
+
+<button onclick="guardarCurso()">Guardar</button>
+
+<script src="../js/course.js"></script>
+<script>
+    cargarProfesores();
+</script>
+
+</body>
+</html>
