@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Cursos</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Cursos</h1>
+        <button onclick="listarCursos()">🔄 Recargar lista</button>
+        <a href="create_course.html"><button> Crear Curso</button></a>
+        <button onclick="logout()"> Cerrar Sesión</button>
+
+        <table border="1" width="100%">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Código</th>
+                    <th>Descripción</th>
+                    <th>Profesor</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tablaCursos"></tbody>
+        </table>
+
+       
+    </div>
+    <script src="../js/course.js"></script>
+    <script>
+        checkAuth();
+        listarCursos();
+    </script>
+</body>
+</html>

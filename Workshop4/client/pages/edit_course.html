@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Curso</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Editar Curso</h1>
+        <form id="editCourseForm">
+            <input type="hidden" id="cursoId">
+            <label for="nombre">Nombre del curso</label>
+            <input type="text" id="nombre" placeholder="Ej: Programación 1" required>
+            <label for="codigo">Código</label>
+            <input type="text" id="codigo" placeholder="Ej: PROG-101" required>
+            <label for="descripcion">Descripción</label>
+            <input type="text" id="descripcion" placeholder="Descripción del curso">
+            <label for="profesorSelect">Profesor</label>
+            <select id="profesorSelect" required>
+                <option value="">-- Seleccione un profesor --</option>
+            </select>
+            <button type="submit">✏️ Actualizar Curso</button>
+        </form>
+        <a href="list_course.html"><button>🔙 Volver a la lista</button></a>
+        <button onclick="logout()">🚪 Cerrar Sesión</button>
+
+    </div>
+    <script src="../js/course.js"></script>
+    <script>
+        checkAuth();
+        cargarCursoEditar();
+
+        document.getElementById("editCourseForm")
+            .addEventListener("submit", function(e) {
+                e.preventDefault();
+                actualizarCurso();
+            });
+    </script>
+</body>
+</html>
